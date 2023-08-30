@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <link href="bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="styles.css" />
+
+  </head>
+  <body>
+    <div class="container p-3 mt-5" id="app">
+      <div>
+        <h2 class="text-center fw-bold ">My Todo <i class='bx bxs-check-square'></i></h2>
+        <div class="input_div d-flex p-2">
+          <input class="form-control" type="text" id="goal" v-model="enteredValue" placeholder="Add New Goal .." />
+          <button class="btn btn-primary-color" v-on:click="addGoal">Add Goal</button>
+        </div>
+       
+      </div>
+      <ul>
+        <li class="d-flex fw-bold" v-for="(goal,index) in goals" >
+         <div> {{ goal }}</div>
+          <a @click="removeGoal(index)">
+            <i class='bx bx-trash'></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script src="app.js"></script>
+  </body>
+</html>
